@@ -1,0 +1,158 @@
+:root{
+    --first-color:hsl(230,62%,56%);
+    --title-color:hsl(230,70%,16%);
+    --text-color:hsl(230,16%,45%);
+    --border-color:hsl(230,50%,90%);
+    --white-color:hsl(0,0%,100%);
+    --body-color:hsl(230,100%,96%);
+    --container-color:hsl(230,100%,97%);
+  }
+  
+
+.p_body{
+    background: var(--body-color);
+
+}
+
+
+
+.prod-content h5{
+    color: var(--title-color);
+    font-weight: bold;
+}
+.Prod_details{
+    height: 400px;
+    width: 100%;
+    display: flex;
+    justify-content:space-evenly;
+}
+.Prod_details .prod-image{
+    margin-left: 20px;
+    margin-top: 20px;
+}
+.Prod_details .prod-content{
+    margin-top: 20px;
+    margin-left: 20px;
+    font-weight: 600;
+    width: 70%;
+   
+
+}
+.checked {
+    color: orange;
+  }
+
+.star-rating{
+    border-bottom: 1px solid grey;
+    padding-bottom: 10px;
+
+}
+.prod_descrip{
+    height: 530px;
+    width: 100%;
+    padding-top: 10px;
+    border-top: 1.8px solid grey;
+    border-bottom: 1.8px solid grey;
+}
+.prod_descrip .prod_des_title{
+    margin-left: 20px;
+    font-size: 1rem;
+    color: var(--title-color);
+    font-weight: bold;
+}
+.prod_descrip .prod_sub_head{
+    margin-left: 30px;
+    font-weight: bold;
+}
+.prod_descrip .prod_desc_cont{
+    margin-left: 40px;
+    margin-right: 10px;
+    
+}
+.ex-prod-head{
+    margin-left: 20px;
+    font-family: 'poppins',sans-serif;
+    color: var(--title-color);
+    font-weight: 600;
+}
+
+.ex-prod-content{
+    margin-left: 40px;
+    margin-right: 10px;
+}
+.ex-prod_details{
+    margin-top: 20px;
+    width: 100%;
+    height: 610px;
+    border-bottom: 1.7px solid grey;
+}
+.rev-heading img{
+    border-radius: 20px;
+}
+.cust-reviews{
+    margin-left: 20px;
+    width: 1005;
+}
+.review1{
+    margin-left: 40px;
+    background: #eeeeeeb6;
+    padding-top: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 5px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    margin-bottom: 20px;
+    margin-right: 10px;
+
+}
+
+.copyrights{
+    height: 50px;
+    width: 100%;
+  }
+  .copyrights h3{
+    text-align: center;
+    padding-top: 10px;
+  
+  }
+      
+.cust-reviews h3{
+    font-family: 'poppins',sans-serif;
+    color: var(--title-color);
+    font-weight: 600;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+@media(max-width:760px){
+    .Prod_details{
+        flex-wrap: wrap;
+        height: 800px;
+    }
+    .ex-prod_details{
+        height: 750px;
+    }
+    
+
+
+}
+@media(min-width:761px){
+    .Prod_details .prod-content{
+        margin-top: 70px;
+    }
+    .Prod_details img{
+        height: 360px;
+    }
+    .prod_descrip{
+        height: 300px;
+    }
+}

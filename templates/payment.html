@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
+    <!-- custom css file link -->
+    <link rel="stylesheet" href="{{url_for("static",filename="/css/payment.css")}}">
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+</head>
+<body style="background:hsl(230,100%,96%);">
+    
+<div class="container">  
+<div class="container">
+        <h1>Payment Summary</h1>
+        <div id="cartItems" class="items"></div><!-- class = "cart-items"-->
+        <div id="cartTotal" class="cart-total"></div>
+    </div>
+
+    <form action="/payment" method="GET">
+
+    <div class="row">
+
+        <div class="col">
+
+            <h3 class="title text-dark ">billing address</h3>
+
+            <div class="input box">
+                <span>full name :</span>
+                <input type="text" name="fname"placeholder="john deo">
+            </div>
+            <div class="input box">
+                <span>email :</span>
+                <input type="email" name="email" placeholder="example@example.come">
+            </div>
+            <div class="input box">
+                <span>address :</address> :</span>
+                <input type="text" name="address" placeholder="room - street - locality">
+            </div>
+            <div class="input box">
+                <span>city :</span>
+                <input type="text"  name="city"placeholder="mumbai">
+            </div>
+
+            <div class="flex">
+                <div class="input box">
+                <span>state :</span>
+                <input type="text"name="state" placeholder="Tamilnadu">
+            </div>
+            <div class="input box">
+                <span>zip code :</span>
+                <input type="text" placeholder="123 456">
+            </div>
+        </div>
+    
+        </div>
+
+        <div class="col">
+
+            <h3 class="title text-dark">payment</h3>
+
+            <div class="input box">
+                <span>cards accepted :</span>
+                <i class="fa-brands fa-cc-visa fa-lg"></i>
+                <i class="fa-solid fa-credit-card-front fa-lg"></i>
+            </div>
+            <div class="input box">
+                <span>name on card :</span>
+                <input type="text" name="name" placeholder="mr. john deo">
+            </div>
+            <div class="input box">
+                <span>credit card number :</address> :</span>
+                <input type="number" name="cardno" placeholder="1111222233334444">
+            </div>
+            <div class="input box">
+                <span>exp month :</span>
+                <input type="text" placeholder="january">
+            </div>
+
+            <div class="flex">
+                <div class="input box">
+                <span>exp year :</span>
+                <input type="number" placeholder="2022">
+            </div>
+            <div class="input box">
+                <span>CASH :</span>
+                <input class="total_cost" style="cursor:not-allowed;" type="text" name="cash">
+            </div>
+        </div>
+    
+        </div>
+    
+    </div>
+
+<div style="text-align: center;padding-top: 10px; ;"><button class="btn btn-primary"type="submit" name="Pay" value="Pay">Pay</button></div>
+
+
+    </form>
+    
+
+</div>
+   <script>
+    document.addEventListener('DOMContentLoaded', () => {
+    const cartItems = document.getElementById('cartItems');
+    const cartTotal = document.getElementById('cartTotal');
+    const cart_cost=document.querySelector('.total_cost')
+    // Retrieve cart data from local storage
+
+    const cartData = JSON.parse(sessionStorage.getItem('cartData'));
+
+
+  
+  
+    // Check if cart data exists
+    if (cartData && cartData.length > 0) {
+      // Initialize variables to store HTML for cart items and total cost
+      let cartItemsHTML = '';
+      let totalCost = 0;
+  
+      // Loop through cart data and generate HTML for each item
+      cartData.forEach(item => {
+        cartItemsHTML += `
+          <div class="items-content">
+            <div class="img-box"><img src="${item.image}" alt="${item.product}"></div>
+            <p class="name">${item.product}</p>
+            <p class="quantity">${item.quantity}</p>
+            <p class="cost">Rs.${item.totalPrice.toFixed(2)}</p>
+          </div>
+        `;
+  
+        // Add item's total price to calculate the overall total cost
+        totalCost += item.totalPrice;
+      });
+  
+      // Display cart items HTML
+      cartItems.innerHTML = cartItemsHTML;
+  
+      // Display total cost
+      cartTotal.textContent = `Total Cost: Rs.${totalCost.toFixed(2)}`;
+      cart_cost.value=`Rs.${totalCost.toFixed(2)}`
+    } else {
+      // Display message if cart is empty
+      cartItems.innerHTML = '<p>Your cart is empty</p>';
+      cartTotal.textContent = 'Total Cost: Rs.0.00';
+    }
+
+  });
+  /*
+  document.addEventListener('DOMContentLoaded', () => {
+    const cartItems = document.getElementById('cartItems');
+    const cartTotalInput = document.querySelector('.total_cost'); // Change variable name to cartTotalInput
+
+    // Retrieve total cost from session storage
+    const totalCost = JSON.parse(sessionStorage.getItem('totalCost'));
+
+    // Check if total cost exists in session storage
+    if (totalCost) {
+        // Set the value of the input field to the retrieved total cost
+        cartTotalInput.value = totalCost.toFixed(2);
+    } else {
+        // Display default value if total cost is not found in session storage
+        cartTotalInput.value = '0.00';
+    }
+
+    // Disable the input field
+    cartTotalInput.disabled = true;
+});
+
+*/
+   </script>
+
+</body>
+</html>

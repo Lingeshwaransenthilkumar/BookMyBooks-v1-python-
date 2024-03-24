@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<head>
+    <title>Sherlock Holmes-Book</title>
+</head>
+<link rel="stylesheet" href="{{url_for("static",filename="/css/book1.css")}}" type="text/css">
+<link rel="stylesheet" href="{{url_for("static",filename="/css/index.css")}}" type="text/css">
+
+
+<!--bootstrap css cdn-->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+<!--bootstrap js cdn-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"></script>
+<!--Font- Awesome cdn-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<body>
+    <div class="p_body">
+        <!--navbar-->
+        <div class="header">
+          <div class="icon-menu">
+            <!--left offcanvas-->
+              <button class="menu-icon" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBackdrop" aria-controls="offcanvasWithBackdrop"><i class="fa-solid fa-bars"></i></button>
+              <div class="left_menu offcanvas offcanvas-start" tabindex="-1" id="offcanvasWithBackdrop" aria-labelledby="offcanvasWithBackdropLabel">
+                  <div class="offcanvas-header">
+                    <h1 class="offcanvas-title" id="offcanvasWithBackdropLabel">Book My Books</h1>
+                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                  </div>
+                  <div class="offcanvas-body">
+                      <div class="nav-list">
+                          <ul>
+                              <a href="/" style="text-decoration: none;"><li>Home</li></a>
+                              <a href="#home" style="text-decoration: none;"><li>About</li></a>
+                              <a href="#products" style="text-decoration: none;"><li>Products</li></a>
+                              <a href="#contact" style="text-decoration: none;"><li>Contact Us</li></a>
+                              <a href="/survey" target="_blank" style="text-decoration: none;"><li>Feedback</li></a> 
+                          </ul>
+                      </div>
+                  </div>
+                </div>
+          </div>
+          <!--logo-->
+          <div class="title-container">
+            <div class="logo"><img src="{{url_for("static",filename="/images/logo.png")}}"></div>
+            <h1 class="text">Book My Books</h1>
+          </div>
+          <div class="icon-addtocart">
+            <!--right offcanvas-->
+              <button class="cart-icon" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><i class="fa-solid fa-cart-shopping"></i></button>
+    
+              <div class="right_menu offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+                <div class="offcanvas-header">
+                  <h1 id="offcanvasRightLabel">Cart</h1>
+                  <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                  <form method="get">
+                  <div class="cart"id="cart">
+                    <ul class="cart-items">
+                      <!-- Cart items will be dynamically added here -->
+                    </ul>
+                    <p>Total: <span class="cart-total" name="total">Rs.0</span></p>
+    
+                    <a href="/payment" class="pay">Pay</a></div>
+                  </div>
+                  </form>
+                </div>
+              </div>
+    
+          </div>
+      
+       
+         
+        
+
+          <!--Product details-->
+          <div class="Prod_details">
+            <div class="prod-image">
+                <img src="{{url_for("static",filename="/images/novel3.jpg")}}"height="400px" width="300px">
+            </div>
+            <div class="prod-content">
+                <h5>Sherlock Holmes and the Servants of Hell: Volume 1 
+                    <span style="color: grey;"> Paperback – Import, 12 July 2016</span>
+                   <h6> by <a href="https://en.wikipedia.org/wiki/Sherlock_Holmes_and_the_Servants_of_Hell" target="_blank" style="text-decoration: none;">Paul Kane</a> (Author)</h6>
+                </h5>
+                <div class="star-rating">
+                   4.3 <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" style="text-decoration: none;">191 ratings</a>
+                </div>
+                <div class="cost">
+                    <div class="cost"><p class="text-success">Rs.323&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color: red;">M.R.P : <strike>Rs.363</strike></span></p></div>
+                    <div class="buttons">
+                   <a href="#prod_details"><button type="button" class="read_more btn btn-outline-success pl-1">Read More</button></a> 
+                    <button type="button" class="add-to-cart btn btn-outline-warning" data-product="Mahabharata" data-price="323"><i class="fa-solid fa-cart-shopping"></i>&nbsp;Add to cart</button> 
+                    </div>
+                </div>
+            </div>
+          </div>
+
+        <!--Product description-->
+        <div class="prod_descrip">
+            <div class="prod_des_title"><h4>Product Description</h4></div>
+            <div class="prod_sub_head"><h6 style="font-weight: bold;">About the author</h6></div>
+            <div class="prod_desc_cont">
+                <p>
+                   Paul Kane's genre journalism has appeared in such magazines as Death Ray and SFX; his award-winning short fiction has appeared in magazines and anthologies on both sides of the Atlantic; and his novels include Of Darkness and Light and The Gemini Factor. As Special Publications Editor of the British Fantasy Society, Paul worked with authors like Brian Aldiss, Ramsey Campbell, Muriel Gray, Robert Silverberg and many more.
+                </p>
+                <p>
+                    Paul currently lives in Derbyshire, UK, with his wife – the author Marie O’Regan – his family, and a black cat called Mina.
+
+
+                </p>
+            </div>
+        </div>
+        <!--extended prod_details-->
+        <div class="ex-prod_details" id="prod_details">
+          <div class="ex-prod-head">
+            <h4>Product details</h4>
+          </div>
+          <div class="ex-prod-content">
+            <p> <b>Publisher:</b> Solaris (12 July 2016)</p>
+            <p><b>Language :</b> English</p>
+            <p><b>Paperback :</b> 304 pages
+            </p>
+            <p><b>ISBN-10 :</b> 1781084556
+            </p>
+            <p><b>ISBN-13 :</b> 978-1781084557    </p>
+            <p><b>Item Weight :</b>  204 g
+            </p>
+            <p><b>Dimensions : </b> 12.7 x 1.91 x 20.32 cm
+            </p>
+            
+            <p><b>Net Quantity :</b> 1 Count
+            </p>
+            <p><b>Packer : </b> Westland Books A Division of Nasadiya Technologies Pvt ltd No. 269/2B, First Floor, "Iral Arul", Vimalraj Street, Netaji Nagar, Alapakkam Main Road, Maduravoyal, Chennai - 600095. Ph: +9144 43792500
+            </p>
+            <p><b>Generic Name :</b> Book
+            </p>
+            <p><b>Best Sellers Rank :</b> #5,822 in Books (See Top 100 in Books)
+              #79 in Thrillers and Suspense</p>
+
+          </div>
+        </div>   
+        
+        <!--reviews-->
+        <div class="cust-reviews">
+          <h3>Top Reviews from India</h3>
+          <div class="review1">
+            <div class="rev-heading">
+              <img src="{{url_for("static",filename="/images/rev1.jpg")}}"><h6>Arun kumar</h6>
+            </div>
+            <div class="rev-cont">
+              <div class="rev-star-rating">
+                5 &nbsp; <span class="fa fa-star checked"></span>
+                 <span class="fa fa-star checked"></span>
+                 <span class="fa fa-star checked"></span>
+                 <span class="fa fa-star checked"></span>
+                 <span class="fa fa-star checked"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Amazing</b>
+             </div>
+             <p>Reviewed in India on 3 April 2023</p>
+             <p>Great buy</p>
+            </div>
+          </div>
+          <div class="review1">
+            <div class="rev-heading">
+              <img src="{{url_for("static",filename="/images/rev2.jpg")}}"><h6>Kausik</h6>
+            </div>
+            <div class="rev-cont">
+              <div class="rev-star-rating">
+                2 &nbsp;<span class="fa fa-star checked"></span>
+                 <span class="fa fa-star checked"></span>
+                 <span class="fa fa-star"></span>
+                 <span class="fa fa-star "></span>
+                 <span class="fa fa-star"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Worst</b>
+             </div>
+             <p>Reviewed in India on 5 December 2022
+            </p>
+             <p>I did not really like this book. It was really too far outside the Sherlock Holmes stories we have read over the years. I don't recommend it at all. Really a gruesome story and not enjoyable.
+            </p>
+            </div>
+          </div>
+          <div class="review1">
+            <div class="rev-heading">
+              <img src="{{url_for("static",filename="/images/rev2.jpg")}}"><h6>Neha</h6>
+            </div>
+            <div class="rev-cont">
+              <div class="rev-star-rating">
+                5 &nbsp; <span class="fa fa-star checked"></span>
+                 <span class="fa fa-star checked"></span>
+                 <span class="fa fa-star checked"></span>
+                 <span class="fa fa-star checked"></span>
+                 <span class="fa fa-star checked"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Absolutely Unputdownable</b>
+             </div>
+             <p>Reviewed in India on 3 December 2022</p>
+             <p>First of all, what a great bloody cover this is! I have been thinking about cobbling together a short list of my top 5 books so far in 2016. I’m glad now that I waited until I finished this superb read from Paul Kane.
+</p>
+            </div>
+          </div>
+
+        </div>
+         <!--copyrights-->
+       <div class="copyrights">
+         <h3>Copyright@2023 &nbsp;BMB</h3>
+       </div>
+   
+            
+
+
+    </div>
+    <script src="{{url_for("static",filename="/js/script.js")}}"></script>
+</body>

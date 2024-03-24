@@ -1,0 +1,180 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap');
+
+:root{
+    --first-color:hsl(230,62%,56%);
+    --title-color:hsl(230,70%,16%);
+    --text-color:hwb(229 38% 48%);
+    --border-color:hsl(230,50%,90%);
+    --white-color:hsl(0,0%,100%);
+    --body-color:hsl(230,100%,96%);
+    --container-color:hsl(230,100%,97%);
+  }
+
+*{
+    font-family: 'Poppins', sans-serif;
+    margin: 0; padding: 0;
+    box-sizing: border-box;
+    outline: none; border: none;
+    text-transform: capitalize;
+    transition: all .2s linear;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+    min-height: 100vh;
+    flex-direction: column;
+    padding-bottom: 70px;
+}
+.body{
+    background:url(faq.jpg);
+    background-size: cover;
+}
+
+.container form{
+    padding: 20px;
+    width: 500px;
+    background: var(--container-color);
+    box-shadow: 0 5px 10px rgba(0,0,0,.1);
+}
+
+.container form .row{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.container form .row .col{
+    flex:1 1 250px;
+}
+
+.container form .row .col .title{
+    font-size: 20px;
+    color: var(--body-color);
+    padding-bottom: 5px;
+    text-transform: uppercase;
+}
+
+.container form .row .col .input{
+    margin: 15px 0;
+}
+
+.container form .row .col .inputBox span{
+    margin-bottom: 10px;
+    display: block;
+}
+
+.container form .row .col .inputBox input{
+    width: 100%;
+    border: 1px solid #ccc;
+    padding: 10px 15px;
+    font-size: 15px;
+    text-transform: none;
+}
+
+input{
+    background: transparent;
+}
+.container form .row .col .inputBox input:focus{
+    border:1px solid #000;
+}
+
+.container form .row .col .flex{
+    display: flex;
+    gap: 10px;
+}
+
+.container form .row .col .flex .inputBox{
+    margin-top: 5px;
+}
+
+.container form .row .col .inputBox img{
+    height: 10px;
+    margin-top: 5px;
+    filter: drop-shadow(0 0 1px #000);
+}
+
+.container form button{
+    width: 100%;
+    padding: 12px;
+    font-size: 17px;
+    background: #27ae60;
+    color: #fff;
+    margin-top: 5px;
+    cursor: pointer;
+}
+
+.container form button:hover{
+    background: #2ecc71;
+}
+button{
+    color: #6c63ff;
+}
+
+/* items list*/
+.items-content .img-box img{
+    object-fit: cover;
+    height: 120px;
+    border-radius: 10px;
+    width: 90px;
+    padding-top: 10px;
+    padding-left: 18px;
+    position: absolute;
+    top: -40%;
+    left: -10%;
+    background: transparent;
+    
+}
+.items-content{
+    background: rgba(255, 255, 255, 0.247);
+    height: 100px;
+    position: relative;
+    width: 500px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 50px;
+    margin-bottom: 30px;
+    margin-left: 50px;
+    padding: 10px;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+}
+.items {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .items-content {
+    display: flex;
+    align-items: center;
+  }
+  
+  .img-box {
+    margin-right: 150px; /* Adjust margin between image and text */
+  }
+  
+  .name {
+    flex-grow: 1; /* Allow name to take up remaining space */
+    margin-right: 50px;
+  }
+  
+  .quantity {
+    margin-right: 70px;
+  }
+  
+.cart-total{
+    background: rgba(255, 255, 255, 0.274);
+    height: 60px;
+    width: 400px;
+    padding: 20px;
+    border-radius: 20px;
+    margin-left: 50px;
+    padding-left: 110px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+form{
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;}

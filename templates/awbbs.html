@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<head>
+    <title>Stories by Children from around the world Book</title>
+</head>
+<link rel="stylesheet" href="{{url_for("static",filename="/css/book1.css")}}" type="text/css">
+
+<!--bootstrap css cdn-->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+<!--bootstrap js cdn-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"></script>
+<!--Font- Awesome cdn-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<body>
+    <div class="p_body">
+        <!--navbar-->
+       <div class="header bg-dark">
+
+
+          <div class="icon-menu">
+            <!--left offcanvas-->
+              <button class="menu-icon" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBackdrop" aria-controls="offcanvasWithBackdrop"><i class="fa-solid fa-bars"></i></button>
+              <div class="offcanvas offcanvas-start bg-warning" tabindex="-1" id="offcanvasWithBackdrop" aria-labelledby="offcanvasWithBackdropLabel">
+                  <div class="offcanvas-header">
+                    <h1 class="offcanvas-title" id="offcanvasWithBackdropLabel" style="text-align: center;  font-family: 'Bungee Spice', cursive;
+                    ">Book My Books</h1>
+                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                  </div>
+                  <div class="offcanvas-body">
+                      <div class="nav-list">
+                        <ul>
+                          <a href="/" style="text-decoration: none;"><li>Home</li></a>
+                          <a href="#home" style="text-decoration: none;"><li>About</li></a>
+                          <a href="#products" style="text-decoration: none;"><li>Products</li></a>
+                          <a href="#contact" style="text-decoration: none;"><li>Contact Us</li></a>
+                          <a href="#" style="text-decoration: none;"><li>Feedback</li></a>
+                         
+                      </ul>
+                      </div>
+                    
+                  </div>
+                </div>
+
+          </div>
+
+          <!--logo-->
+          <div class="logo">
+             
+             <h1>Book My Books</h1>
+
+          </div>
+
+
+          <div class="icon-addtocart">
+            <!--right offcanvas-->
+              <button class="cart-icon" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><i class="fa-solid fa-cart-shopping"></i></button>
+
+              <div class="offcanvas offcanvas-end bg-warning" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+                <div class="offcanvas-header">
+                  <h1 id="offcanvasRightLabel">Cart</h1>
+                  <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                  <div class="cart">
+                    <ul class="cart-items">
+                      <!-- Cart items will be dynamically added here -->
+                    </ul>
+                    <p>Total: <span class="cart-total"name="total">Rs.0</span></p>
+                    <a href="/payment"><button type="submit" class="pay btn btn-outline-success" style="font-size: 1.7rem; margin-left: 150px;">Pay</button></a>
+                  </div>
+                </div>
+              </div>
+          </div>
+       </div>
+        
+
+          <!--Product details-->
+          <div class="Prod_details">
+            <div class="prod-image">
+                <img src="{{url_for("static",filename="/images/animation2.jpg")}}"height="400px" width="300px">
+            </div>
+            <div class="prod-content">
+                <h5>Stories by Children from around the world: Authored by students of Hello Learner and Hello English (Vol 20)-(Stories by students of Hello Learner and Hello English)<span style="color: grey;"> Paperback – 28 November 2022</span>
+                   <h6> by <a href="https://en.wikipedia.org/wiki/The_Mahabharata_Secret" target="_blank" style="text-decoration: none;">Students</a> (Authors)</h6>
+                </h5>
+                <div class="star-rating">
+                   4.3 <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" style="text-decoration: none;">191 ratings</a>
+                </div>
+                <div class="cost">
+                    <div class="cost"><p class="text-success">Rs.323&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color: red;">M.R.P : <strike>Rs.363</strike></span></p></div>
+                    <div class="buttons">
+                   <a href="#prod_details"><button type="button" class="read_more btn btn-outline-success pl-1">Read More</button></a> 
+                    <button type="button" class="add-to-cart btn btn-outline-warning" data-product="Mahabharata" data-price="323"><i class="fa-solid fa-cart-shopping"></i>&nbsp;Add to cart</button> 
+                    </div>
+                </div>
+            </div>
+          </div>
+
+        <!--Product description-->
+        <div class="prod_descrip">
+            <div class="prod_des_title"><h4>Product Description</h4></div>
+            <div class="prod_sub_head"><h6 style="font-weight: bold;">About the author</h6></div>
+            <div class="prod_desc_cont">
+                <p>
+                    Christopher C. Doyle is an author who transports the reader into a fascinating world where ancient secrets buried in legends blend with science and history to create a gripping story. His debut novel, The Mahabharata Secret, featured among the top ten books of 2013 and was nominated for the Raymond Crossword Book Award, 2014. He followed it up with the bestselling <b>The Mahabharata Quest</b> series, featuring The Alexander Secret and The Secret of the Druids and the bestselling<b> The Pataala Prophecy </b> featuring Son of Bhrigu and The Mists of Brahma, all of which have won rave reviews from readers.
+                </p>
+                <p>
+                    Christopher can be contacted at: Website: www.authorchristophercdoyle.com<br>
+                    Email: contact@christophercdoyle.com<br>
+                    Facebook: www.facebook.com/authorchristophercdoyle<br>
+                    The Quest Club: www.authorchristophercdoyle.com/the-quest-club<br>
+
+                </p>
+            </div>
+        </div>
+        <!--extended prod_details-->
+        <div class="ex-prod_details" id="prod_details">
+          <div class="ex-prod-head">
+            <h4>Product details</h4>
+          </div>
+          <div class="ex-prod-content">
+            <p> <b>Publisher:</b> Westland (28 November 2022); Westland Books A Division of Nasadiya Technologies Pvt ltd No. 269/2B, First Floor, "Iral Arul", Vimalraj Street, Netaji Nagar, Alapakkam Main Road, Maduravoyal, Chennai - 600095. Ph: +9144 43792500</p>
+            <p><b>Language :</b> English</p>
+            <p><b>Paperback :</b> 450 pages
+            </p>
+            <p><b>ISBN-10 :</b> 9395767154
+            </p>
+            <p><b>ISBN-13 :</b> 978-9395767156
+            </p>
+            <p><b>Reading age :</b> 5 years and up
+            </p>
+            <p><b>Item Weight :</b> 380 g
+            </p>
+            <p><b>Dimensions : </b>21.5 x 14 x 1.6 cm
+            </p>
+            <p><b>Country of Origin :</b> India
+            </p>
+            <p><b>Net Quantity :</b> 1 Count
+            </p>
+            <p><b>Packer : </b> Westland Books A Division of Nasadiya Technologies Pvt ltd No. 269/2B, First Floor, "Iral Arul", Vimalraj Street, Netaji Nagar, Alapakkam Main Road, Maduravoyal, Chennai - 600095. Ph: +9144 43792500
+            </p>
+            <p><b>Generic Name :</b> Book
+            </p>
+            <p><b>Best Sellers Rank :</b> #5,822 in Books (See Top 100 in Books)
+              #79 in Thrillers and Suspense</p>
+
+          </div>
+        </div>   
+        
+        <!--reviews-->
+        <div class="cust-reviews">
+          <h3>Top Reviews from India</h3>
+          <div class="review1">
+            <div class="rev-heading">
+              <img src="{{url_for("static",filename="/images/rev1.jpg")}}"><h6>Arun kumar</h6>
+            </div>
+            <div class="rev-cont">
+              <div class="rev-star-rating">
+                5 &nbsp; <span class="fa fa-star checked"></span>
+                 <span class="fa fa-star checked"></span>
+                 <span class="fa fa-star checked"></span>
+                 <span class="fa fa-star checked"></span>
+                 <span class="fa fa-star checked"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Amazing</b>
+             </div>
+             <p>Reviewed in India on 3 April 2023</p>
+             <p>Amazing novel. Loved the author's rest book. I always read novels on Kindle. The experience is awesome.</p>
+            </div>
+          </div>
+          <div class="review1">
+            <div class="rev-heading">
+              <img src="{{url_for("static",filename="/images/rev2.jpg")}}"><h6>Kausik</h6>
+            </div>
+            <div class="rev-cont">
+              <div class="rev-star-rating">
+                4 &nbsp;<span class="fa fa-star checked"></span>
+                 <span class="fa fa-star checked"></span>
+                 <span class="fa fa-star checked"></span>
+                 <span class="fa fa-star checked"></span>
+                 <span class="fa fa-star"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Engaging</b>
+             </div>
+             <p>Reviewed in India on 5 December 2022
+            </p>
+             <p>Interesting and engaging read. It takes a lot of effort, research and craft to blend history, science and mystery. Loved the book
+            </p>
+            </div>
+          </div>
+          <div class="review1">
+            <div class="rev-heading">
+              <img src="{{url_for("static",filename="/images/rev2.jpg")}}"><h6>Neha</h6>
+            </div>
+            <div class="rev-cont">
+              <div class="rev-star-rating">
+                5 &nbsp; <span class="fa fa-star checked"></span>
+                 <span class="fa fa-star checked"></span>
+                 <span class="fa fa-star checked"></span>
+                 <span class="fa fa-star checked"></span>
+                 <span class="fa fa-star checked"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Absolutely Unputdownable</b>
+             </div>
+             <p>Reviewed in India on 3 December 2022</p>
+             <p>I'm a huge fan of the Mahabharata Quest Series, it has been a pleasure to watch the characters evolve and grow, and reach to the point they have in this book!
+              The best part is the perfect mix of Medical Fiction & Mytho Fiction in this book was like reading the sweet spot between Dan Brown & Robin Cook! It was absolutely amazing! The pace was great and without getting too technical the story and the Concept was brought to life!
+              It had me gripped from thr first page to the last!
+              And i can't wait for the next book in the series!!!</p>
+            </div>
+          </div>
+
+        </div>
+         <!--copyrights-->
+       <div class="copyrights bg-dark">
+         <h3>Copyright@2023 &nbsp;BMB</h3>
+       </div>
+   
+            
+
+
+    </div>
+</body>

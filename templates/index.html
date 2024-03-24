@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Book My Books</title>
+    </head>
+    <link rel="stylesheet" href="{{url_for("static",filename="/css/index.css")}}" type="text/css">
+    <!--Swiper js for css-->
+  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js"></script>
+    <!--bootstrap css cdn-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+    <!--bootstrap js cdn-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"></script>
+    <!--Font- Awesome cdn-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <body>
+       <div class="p_body">
+          <!--navbar-->
+         <div class="header">
+            <div class="icon-menu">
+              <!--left offcanvas-->
+                <button class="menu-icon" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBackdrop" aria-controls="offcanvasWithBackdrop"><i class="fa-solid fa-bars"></i></button>
+                <div class="left_menu offcanvas offcanvas-start z-3" tabindex="-1" id="offcanvasWithBackdrop" aria-labelledby="offcanvasWithBackdropLabel" style="background: hsl(230,100%,96%);">
+                    <div class="offcanvas-header">
+                      <h1 class="offcanvas-title" id="offcanvasWithBackdropLabel">Book My Books</h1>
+                      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close" id="close">X</button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <div class="nav-list">
+                            <ul>
+                                <a href="/" style="text-decoration: none;"><li>Home</li></a>
+                                <a href="#home" style="text-decoration: none;"><li>About</li></a>
+                                <a href="#products" style="text-decoration: none;"><li>Products</li></a>
+                                <a href="#contact" style="text-decoration: none;"><li>Contact Us</li></a>
+                                <a href="/survey" target="_blank" style="text-decoration: none;"><li>Feedback</li></a> 
+                            </ul>
+                        </div>
+                    </div>
+                  </div>
+            </div>
+            <!--logo-->
+            <div class="title-container">
+              <div class="logo"><img src="{{url_for("static",filename="/images/logo.png")}}"></div>
+              <h1 class="text" data-aos="fade-down">Book My Books</h1>
+            </div>
+            <div class="icon-addtocart">
+              <!--right offcanvas-->
+                <button class="cart-icon" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><i class="fa-solid fa-cart-shopping"></i></button>
+                <div class="cart-icon-number" id="cart-length">0</div>
+
+                <div class="right_menu offcanvas offcanvas-end z-3" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel" style="background: hsl(230,100%,96%);">
+                  <div class="offcanvas-header">
+                    <h1 id="offcanvasRightLabel">Cart</h1>
+                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close" id="close">X</button>
+                  </div>
+                  <div class="offcanvas-body">
+                    <form method="get">
+                    <div class="cart"id="cart">
+                      <ul class="cart-items">
+                        <!-- Cart items will be dynamically added here -->
+                      </ul>
+                      <p class="total">Total: <span class="cart-total" name="total" id="totalAmount">Rs.0</span></p>
+
+                      <a href="/payment" class="pay" id="payButton" onclick="return checkTotal()">Pay</a></div>
+                    </div>
+                    </form>
+                  </div>
+                </div>
+
+            </div>
+        <!--Home section-->
+        <section class="home">
+          <div class="row z-1">
+            <div class="content">
+              <h3>Browse &<br>
+              Select E-Books</h3>
+              <p>
+                Find the best E-books from the favourite websites.Explore hundreds of books with all categories.Take advantage of 50% discount and more..
+              </p>
+              <a href="#" class="home-btn">Explore Now</a>
+            </div>
+            <div class="swiper books-slider">
+              <div class="swiper-wrapper">
+              <a href="#" class="swiper-slide"><img src="{{url_for("static",filename="/images/home-book-1.png")}}"  alt="home-page-books"></a>
+              <a href="#" class="swiper-slide"><img src="{{url_for("static",filename="/images/home-book-2.png")}}"  alt="home-page-books"></a>
+              <a href="#" class="swiper-slide"><img src="{{url_for("static",filename="/images/home-book-3.png")}}"  alt="home-page-books"></a>
+              <a href="#" class="swiper-slide"><img src="{{url_for("static",filename="/images/home-book-3.png")}}"   alt="home-page-books"></a>
+              <a href="#" class="swiper-slide"><img src="{{url_for("static",filename="/images/home-book-4.png")}}"  alt="home-page-books"></a>
+              <a href="#" class="swiper-slide"><img src="{{url_for("static",filename="/images/book-1.png")}}"  alt="home-page-books"></a>
+              <a href="#" class="swiper-slide"><img src="{{url_for("static",filename="/images/book-10.png")}}"  alt="home-page-books"></a>
+              </div>
+            </div>
+          </div>
+          <section class="features">
+            <div class="features-box">
+              <div class="features-box-1">
+                <div class="features-icon"><i class="fa-solid fa-truck"></i></div>
+                <div class="features-title">Free Shipping</div>
+                <div class="features-content"><p>Order more than 100$</p></div>
+              </div>
+              <div class="features-box-2">
+                <div class="features-icon"><i class="fa-solid fa-lock"></i></div>
+                <div class="features-title">Secure Payment</div>
+                <div class="features-content"><p>100% Secure payment</p></div>
+              </div>
+              <div class="features-box-3">
+                <div class="features-icon"><i class="fa-solid fa-headset"></i></div>
+                <div class="features-title">24/7 Support</div>
+                <div class="features-content"><p>Call us anytime</p></div>
+              </div>
+  
+            </div>
+            
+  
+          </section>
+        
+
+        </section>
+  <!--featured books-->
+  <section class="featured section" id="featured">
+    <h2 class="section__title">
+      Featured Books
+    </h2>
+    <div class="featured__container container">
+      <div class="featured__swiper swiper">
+        <div class="swiper-wrapper">
+          <article class="featured__card swiper-slide">
+            <img src="{{url_for("static",filename="/images/book-10.png")}}" alt="image" class="featured__img">
+            <h2 class="featured__title">
+              Memories of sword
+
+            </h2>
+            <div class="featured__prices">
+              <span class="featured__discount">Rs.399</span>
+              <span class="featured__price">Rs.499</span>
+            </div>
+            <div class="featured__actions">
+              <button><i class="fa-solid fa-magnifying-glass"></i></button>
+              <button><i class="fa-regular fa-heart"></i></button>
+              <button><i class="fa-solid fa-eye"></i></button>
+            </div>
+            <button class="cart-button" data-product="Memories of sword" data-price="399" data-image="{{url_for("static",filename="/images/book-10.png")}}">
+              <span class="add-to-cart">
+                  ADD TO CART
+              </span>
+              <span class="added">
+                  ADDED &nbsp; <i class="fa-solid fa-thumbs-up fa-bounce"></i>
+              </span>
+              <i class="fas fa-shopping-cart"></i>
+              <i class="fas fa-box"></i>
+          </button>
+          </article>
+          
+          <article class="featured__card swiper-slide">
+            <img src="{{url_for("static",filename="/images/book-9.png")}}" alt="image" class="featured__img">
+            <h2 class="featured__title">
+              Bird park
+
+            </h2>
+            <div class="featured__prices">
+              <span class="featured__discount">Rs.299</span>
+              <span class="featured__price">Rs.399</span>
+            </div>
+            <div class="featured__actions">
+              <button><i class="fa-solid fa-magnifying-glass"></i></button>
+              <button><i class="fa-regular fa-heart"></i></button>
+              <button><i class="fa-solid fa-eye"></i></button>
+            </div>
+            <button class="cart-button" data-product="Bird park" data-price="299" data-image="{{url_for("static",filename="/images/book-9.png")}}" >
+              <span class="add-to-cart">
+                  ADD TO CART
+              </span>
+              <span class="added">
+                  ADDED &nbsp;<i class="fa-solid fa-thumbs-up fa-bounce"></i>
+              </span>
+              <i class="fas fa-shopping-cart"></i>
+              <i class="fas fa-box"></i>
+          </button>
+          </article>
+          <article class="featured__card swiper-slide">
+            <img src="{{url_for("static",filename="/images/book-8.png")}}" alt="image" class="featured__img">
+            <h2 class="featured__title">
+              Modern Abstact
+            </h2>
+            <div class="featured__prices">
+              <span class="featured__discount">Rs.153</span>
+              <span class="featured__price">Rs.300</span>
+            </div>
+            <div class="featured__actions">
+              <button><i class="fa-solid fa-magnifying-glass"></i></button>
+              <button><i class="fa-regular fa-heart"></i></button>
+              <button><i class="fa-solid fa-eye"></i></button>
+            </div>
+            <button class="cart-button" data-product="Learn Abstract" data-price="153" data-image="{{url_for("static",filename="/images/book-8.png")}}">
+              <span class="add-to-cart">
+                  ADD TO CART
+              </span>
+              <span class="added">
+                  ADDED &nbsp; <i class="fa-solid fa-thumbs-up fa-bounce" ></i>
+              </span>
+              <i class="fas fa-shopping-cart"></i>
+              <i class="fas fa-box"></i>
+          </button>
+      
+          </article>
+          <article class="featured__card swiper-slide">
+            <img src="{{url_for("static",filename="/images/book-7.png")}}" alt="image" class="featured__img">
+            <h2 class="featured__title">
+              Plant tree for the future
+            </h2>
+            <div class="featured__prices">
+              <span class="featured__discount">Rs.200</span>
+              <span class="featured__price">Rs.259</span>
+            </div>
+            <div class="featured__actions">
+              <button><i class="fa-solid fa-magnifying-glass"></i></button>
+              <button><i class="fa-regular fa-heart"></i></button>
+              <button><i class="fa-solid fa-eye"></i></button>
+            </div>
+            <button class="cart-button" data-product="Plant tree for the future" data-price="200" data-image="{{url_for("static",filename="/images/book-7.png")}}">
+              <span class="add-to-cart">
+                  ADD TO CART
+              </span>
+              <span class="added">
+                  ADDED &nbsp;<i class="fa-solid fa-thumbs-up fa-bounce"></i>
+              </span>
+              <i class="fas fa-shopping-cart"></i>
+              <i class="fas fa-box"></i>
+          </button>
+          </article>
+          <article class="featured__card swiper-slide">
+            <img src="{{url_for("static",filename="/images/book-6.png")}}" alt="image" class="featured__img">
+            <h2 class="featured__title">
+              Designed for work
+
+            </h2>
+            <div class="featured__prices">
+              <span class="featured__discount">Rs.300</span>
+              <span class="featured__price">Rs.499</span>
+            </div>
+            <div class="featured__actions">
+              <button><i class="fa-solid fa-magnifying-glass"></i></button>
+              <button><i class="fa-regular fa-heart"></i></button>
+              <button><i class="fa-solid fa-eye"></i></button>
+            </div>
+            <button class="cart-button" data-product="Designed for work" data-price="300" data-image="{{url_for("static",filename="/images/book-6.png")}}">
+              <span class="add-to-cart">
+                  ADD TO CART
+              </span>
+              <span class="added">
+                  ADDED &nbsp; <i class="fa-solid fa-thumbs-up fa-bounce"></i>
+              </span>
+              <i class="fas fa-shopping-cart"></i>
+              <i class="fas fa-box"></i>
+          </button>
+          </article>
+          <article class="featured__card swiper-slide">
+            <img src="{{url_for("static",filename="/images/book-5.png")}}" alt="image" class="featured__img">
+            <h2 class="featured__title">
+              Customize your Autumn clothes
+
+            </h2>
+            <div class="featured__prices">
+              <span class="featured__discount">Rs.199</span>
+              <span class="featured__price">Rs.359</span>
+            </div>
+            <div class="featured__actions">
+              <button><i class="fa-solid fa-magnifying-glass"></i></button>
+              <button><i class="fa-regular fa-heart"></i></button>
+              <button><i class="fa-solid fa-eye"></i></button>
+            </div>
+            <button class="cart-button" data-product="Customize your Autumn clothes" data-price="199" data-image="{{url_for("static",filename="/images/book-5.png")}}">
+              <span class="add-to-cart">
+                  ADD TO CART
+              </span>
+              <span class="added">
+                  ADDED &nbsp;<i class="fa-solid fa-thumbs-up fa-bounce"></i>
+              </span>
+              <i class="fas fa-shopping-cart"></i>
+              <i class="fas fa-box"></i>
+          </button>
+          </article>
+          <article class="featured__card swiper-slide">
+            <img src="{{url_for("static",filename="/images/book-4.png")}}" alt="image" class="featured__img">
+            <h2 class="featured__title">
+              Pouring Dreams
+
+            </h2>
+            <div class="featured__prices">
+              <span class="featured__discount">Rs.150</span>
+              <span class="featured__price">Rs.259</span>
+            </div>
+            <div class="featured__actions">
+              <button><i class="fa-solid fa-magnifying-glass"></i></button>
+              <button><i class="fa-regular fa-heart"></i></button>
+              <button><i class="fa-solid fa-eye"></i></button>
+            </div>
+            <button class="cart-button" data-product="Pouring Dreams" data-price="150" data-image="{{url_for("static",filename="/images/book-4.png")}}">
+              <span class="add-to-cart">
+                  ADD TO CART
+              </span>
+              <span class="added">
+                  ADDED &nbsp;<i class="fa-solid fa-thumbs-up fa-bounce"></i>
+              </span>
+              <i class="fas fa-shopping-cart"></i>
+              <i class="fas fa-box"></i>
+          </button>
+          </article>
+          <article class="featured__card swiper-slide">
+            <img src="{{url_for("static",filename="/images/book-3.png")}}" alt="image" class="featured__img">
+            <h2 class="featured__title">
+              Muted
+
+            </h2>
+            <div class="featured__prices">
+              <span class="featured__discount">Rs.50</span>
+              <span class="featured__price">Rs.150</span>
+            </div>
+            <div class="featured__actions">
+              <button><i class="fa-solid fa-magnifying-glass"></i></button>
+              <button><i class="fa-regular fa-heart"></i></button>
+              <button><i class="fa-solid fa-eye"></i></button>
+            </div>
+            <button class="cart-button" data-product="muted" data-price="50" data-image="{{url_for("static",filename="/images/book-3.png")}}">
+              <span class="add-to-cart">
+                  ADD TO CART
+              </span>
+              <span class="added">
+                  ADDED &nbsp;<i class="fa-solid fa-thumbs-up fa-bounce"></i>
+              </span>
+              <i class="fas fa-shopping-cart"></i>
+              <i class="fas fa-box"></i>
+          </button>
+          </article>
+          <article class="featured__card swiper-slide">
+            <img src="{{url_for("static",filename="/images/book-2.png")}}" alt="image" class="featured__img">
+            <h2 class="featured__title">
+              Simple & Minimalist
+
+            </h2>
+            <div class="featured__prices">
+              <span class="featured__discount">Rs.100</span>
+              <span class="featured__price">Rs.199</span>
+            </div>
+            <div class="featured__actions">
+              <button><i class="fa-solid fa-magnifying-glass"></i></button>
+              <button><i class="fa-regular fa-heart"></i></button>
+              <button><i class="fa-solid fa-eye"></i></button>
+            </div>
+            <button class="cart-button" data-product="Simple & Minimalist
+            " data-price="100" data-image="{{url_for("static",filename="/images/book-2.png")}}">
+              <span class="add-to-cart">
+                  ADD TO CART
+              </span>
+              <span class="added">
+                  ADDED &nbsp;<i class="fa-solid fa-thumbs-up fa-bounce"></i>
+              </span>
+              <i class="fas fa-shopping-cart"></i>
+              <i class="fas fa-box"></i>
+          </button>
+          </article>
+          <article class="featured__card swiper-slide">
+            <img src="{{url_for("static",filename="/images/book-1.png")}}" alt="image" class="featured__img">
+            <h2 class="featured__title">
+              The Lord Of The Kings
+
+            </h2>
+            <div class="featured__prices">
+              <span class="featured__discount">Rs.399</span>
+              <span class="featured__price">Rs.499</span>
+            </div>
+            <div class="featured__actions">
+              <button><i class="fa-solid fa-magnifying-glass"></i></button>
+              <button><i class="fa-regular fa-heart"></i></button>
+              <button><i class="fa-solid fa-eye"></i></button>
+            </div>
+            <button class="cart-button" data-product="The Lord of the kings" data-price="399" data-image="{{url_for("static",filename="/images/book-1.png")}}">
+              <span class="add-to-cart">
+                  ADD TO CART
+              </span>
+              <span class="added">
+                  ADDED &nbsp;<i class="fa-solid fa-thumbs-up fa-bounce"></i>
+              </span>
+              <i class="fas fa-shopping-cart"></i>
+              <i class="fas fa-box"></i>
+          </button>
+          </article>
+        </div>
+        <div class="swiper-button-prev">
+          
+        </div>
+        <div class="swiper-button-next">
+        </div>
+
+      </div>
+    </div>
+
+
+
+  </section>
+  <!--discount section starts-->
+  <section class="discount section">
+    <div class="discount__container container grid">
+      <div class="discount__data">
+        <h2 class="discount__title section__title">
+          Up to 50% discount
+        </h2>
+        <p class="discount__description">
+          Take advantage of discount days we have for you,buy books from your favourite writers, the more you buy, the more discounts we have for you... 
+        </p>
+        <a href="#" class="home-btn">Shop Now</a>
+      </div>
+      <div class="discount__images">
+        <img src="{{url_for("static",filename="/images/discount-book-1.png")}}" alt="" class="discount__img-1">
+        <img src="{{url_for("static",filename="/images/discount-book-2.png")}}" alt="" class="discount__img-2">
+
+      </div>
+    </div>
+  </section>        
+  <!--Products section-->
+ <div class="prod-section" id="products"><h1>Popular Books</h1></div>
+  <div class="products">
+     <div class="product left" id="fiction">
+        <div class="prod-image"><img src="{{url_for("static",filename="/images/mahabarata.jpg")}}" height="300px" width="250px"></div><br>
+        <div class="content"><p style="font-weight: bold;margin-left: 7px;">The Khandavaprastha Conspiracy: a fast paced thriller that uses science and history to explain one of the deepest mysteries of the Mahabharata</p></div>
+        <div class="cost"><p class="text-success">Rs.323</p><p class="text-danger">M.R.P : <strike>Rs.363</strike></p></div>
+        <div class="buttons">
+        <a href="/mahabarata" target="_blank"><button type="button" class="read_more">Read More</button></a>
+        <button class="cart-button" data-product="Mahabharata" data-price="323" style="height: 38px; width: 103.9px;" data-image="{{url_for("static",filename="/images/mahabarata.jpg")}}">
+          <span class="add-to-cart">
+              ADD TO CART
+          </span>
+          <span class="added">
+              ADDED &nbsp; <i class="fa-solid fa-thumbs-up fa-bounce"></i>
+          </span>
+          <i class="fas fa-shopping-cart"></i>
+          <i class="fas fa-box"></i>
+      </button>
+        </div>
+     </div>
+     <div class="product top">
+        <div class="prod-image"id="novel"><img src="{{url_for("static",filename="/images/novel3.jpg")}}" height="300px" width="250px"></div><br>
+        <div class="content"><p style="font-weight: bold;margin-left: 7px;">Sherlock Holmes and the Servants of Hell: Volume 1-The World’s Greatest Detective Meets Horror’s Most Notorious Villains! by Paul Kane(author)</p></div>
+        <div class="cost"><p class="text-success">Rs.449</p><p class="text-danger">M.R.P : <strike>Rs.500</strike></p></div>
+        <div class="buttons">
+           <a href="/sherlock holmes"><button type="button"  class="read_more">Read More</button></a>
+           <button class="cart-button" data-product="Sherlock holmes" data-price="449" style="height: 38px; width: 103.9px;" data-image="{{url_for("static",filename="/images/novel3.jpg")}}">
+            <span class="add-to-cart">
+                ADD TO CART
+            </span>
+            <span class="added">
+                ADDED &nbsp; <i class="fa-solid fa-thumbs-up fa-bounce"></i>
+            </span>
+            <i class="fas fa-shopping-cart"></i>
+            <i class="fas fa-box"></i>
+        </button> 
+        </div>
+     </div>
+
+     <div class="product right" id="mystery">
+        <div class="prod-image"><img src="{{url_for("static",filename="/images/mystery2.jpg")}}" height="300px" width="250px"></div><br>
+        <div class="content"><p style="font-weight: bold;margin-left: 7px;">Duplicity: A Tale of Murder, Mystery and Romance (A Smoke and Mirrors Book Book 2)</p></div>
+        <div class="cost"><p class="text-success">Rs.380</p><p class="text-danger">M.R.P : <strike>Rs.560</strike></p></div>
+        <div class="buttons">
+          <a href=""><button type="button" class="read_more">Read More</button></a>
+          <button class="cart-button" data-product="Duplicity" data-price="380" style="height: 38px; width: 103.9px;" data-image="{{url_for("static",filename="/images/mystery2.jpg")}}">
+            <span class="add-to-cart">
+                ADD TO CART
+            </span>
+            <span class="added">
+                ADDED &nbsp; <i class="fa-solid fa-thumbs-up fa-bounce"></i>
+            </span>
+            <i class="fas fa-shopping-cart"></i>
+            <i class="fas fa-box"></i>
+        </button> 
+        </div>
+     </div>
+     <div class="product left" id="romance">
+        <div class="prod-image"><img src="{{url_for("static",filename="/images/romance2.jpg")}}" height="300px" width="250px"></div><br>
+        <div class="content"><p style="font-weight: bold;margin-left: 7px;">Tempting the Rakish Duke: A Historical Regency Romance Novel (A Gentleman's Vow Book 2)</p></div>
+        <div class="cost"><p class="text-success">Rs.100</p><p class="text-danger">M.R.P : <strike>Rs.150</strike></p></div>
+        <div class="buttons">
+            <a href=""><button type="button" class="read_more">Read More</button></a>
+            <button class="cart-button" data-product="Tempting the Rakish Duke" data-price="150" style="height: 38px; width: 103.9px;" data-image="{{url_for("static",filename="/images/romance2.jpg")}}">
+              <span class="add-to-cart">
+                  ADD TO CART
+              </span>
+              <span class="added">
+                  ADDED &nbsp; <i class="fa-solid fa-thumbs-up fa-bounce"></i>
+              </span>
+              <i class="fas fa-shopping-cart"></i>
+              <i class="fas fa-box"></i>
+          </button> 
+           
+        </div>
+     </div>
+    <div class="product bottom" id="animation">
+        <div class="prod-image"><img src="{{url_for("static",filename="/images/animation2.jpg")}}" height="300px" width="250px"></div><br>
+        <div class="content"><p style="font-weight: bold;margin-left: 7px;">Stories by Children from around the world: Authored by students of Hello Learner (Vol 20)</p></div>
+        <div class="cost"><p class="text-success">Rs.323</p><p class="text-danger">M.R.P : <strike>Rs.363</strike></p></div>
+        <div class="buttons">
+             <a href="/awbbs"><button type="button" class="read_more">Read More</button>
+             </a>
+             <button class="cart-button" data-product="Stories by children around the world" data-price="323" data-image="{{url_for("static",filename="/images/animation2.jpg")}}" style="height: 38px; width: 103.9px;">
+              <span class="add-to-cart">
+                  ADD TO CART
+              </span>
+              <span class="added">
+                  ADDED &nbsp; <i class="fa-solid fa-thumbs-up fa-bounce"></i>
+              </span>
+              <i class="fas fa-shopping-cart"></i>
+              <i class="fas fa-box"></i>
+          </button> 
+            
+        </div>
+    </div>
+     <div class="product right" id="comedy">
+       <div class="prod-image"><img src="{{url_for("static",filename="/images/comedy2.jpg")}}" height="300px" width="250px"></div><br>
+       <div class="content"><p style="font-weight: bold;margin-left: 7px;">Charlie Chaplin: The Life and Legacy of a Comedy Icon - by A.K Gandhi (Author)</p></div>
+       <div class="cost"><p class="text-success">Rs.200</p><p class="text-danger">M.R.P : <strike>Rs.399</strike></p></div>
+       <div class="buttons">
+          <a href=""><button type="button" class="read_more">Read More</button></a> 
+           <button class="cart-button" data-product="Charlie chaplin" data-price="200" style="height: 38px; width: 103.9px;" data-image="{{url_for("static",filename="/images/comedy2.jpg")}}">
+            <span class="add-to-cart">
+                ADD TO CART
+            </span>
+            <span class="added">
+                ADDED &nbsp; <i class="fa-solid fa-thumbs-up fa-bounce"></i>
+            </span>
+            <i class="fas fa-shopping-cart"></i>
+            <i class="fas fa-box"></i>
+        </button> 
+        </div>
+    </div>
+  </div>
+  <!--Accordian faq-->
+  <section class="faq" id="questions" class="p-5">
+    <div class="title text-center mb-4"><h2>Frequently Asked Questions</h2></div>
+     <div class="accordion accordion-flush" id="accordionFlushExample">
+        <!--item-1-->
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="flush-headingOne">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne">
+              Are your book prices competitive with other online retailers?
+            </button>
+          </h2>
+          <div id="flush-collapseOne" class="accordion-collapse collapse"  data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">Yes, we strive to offer competitive prices on our books. We regularly compare our prices with other online retailers to ensure that our customers get the best value for their money.
+
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="flush-headingTwo">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo">
+              Do you offer discounts or promotions on books?            </button>
+          </h2>
+          <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">Yes, we frequently run special promotions and discounts on various books. Keep an eye on our website's homepage and subscribe to our newsletter to stay updated on the latest deals and offers.</div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="flush-headingThree">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree">
+              How do I place an order for a book?            </button>
+          </h2>
+          <div id="flush-collapseThree" class="accordion-collapse collapse"  data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">To place an order, simply add the book(s) you want to your shopping cart and proceed to the checkout page. Follow the on-screen instructions to provide shipping and payment details to complete your order.</div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="flush-headingfour">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapsefour">
+              What payment methods do you accept?            </button>
+          </h2>
+          <div id="flush-collapsefour" class="accordion-collapse collapse"  data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">We accept various payment methods, including credit cards, debit cards, PayPal, and other secure online payment options. All transactions are processed through encrypted channels to ensure your financial information is safe.
+
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="flush-headingfive">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapsefive">
+              Do you offer international shipping?            </button>
+          </h2>
+          <div id="flush-collapsefive" class="accordion-collapse collapse"  data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body"> Yes, we offer international shipping to many countries. During the checkout process, you can select your country from the list of available destinations.</div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="flush-headingsix">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapsesix">
+              Can I leave book reviews on your website?            </button>
+          </h2>
+          <div id="flush-collapsesix" class="accordion-collapse collapse"  data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">Absolutely! We encourage our customers to leave reviews and share their feedback about the books they've purchased. Your reviews help other readers make informed decisions and contribute to the book-loving community.
+
+            </div>
+          </div>
+        </div>
+      </div>
+   </section>
+   <!--Reviews-->
+   <section class="reviews">
+    <div class="rev-title"><h1>Customer review</h1></div>
+
+    <div class="box-container">
+      <div class="box left">
+         <div class="r_image"><img src="{{url_for("static",filename="/images/person1.jpg")}}" height="200px" width="300px"></div>
+         <div class="content"><p>
+          "Wow, I am beyond impressed with my experience on this book retail website! As an avid reader, I've explored numerous online bookstores, but this one truly stands out.&nbsp;&nbsp;<b>-Stella</b></p></div>
+      </div>
+      <div class="box top">
+         <div class="r_image"><img src="{{url_for("static",filename="/images/person5.jpg")}}" height="200px" width="300px"></div>
+         <div class="content"><p>
+          The website's user interface is incredibly intuitive, making it a joy to browse through their extensive catalog. The search function is quick and accurate, saving me valuable time when looking for specific titles or authors.&nbsp;&nbsp;<b>Alexa</b>
+         </p></div>
+      </div>
+      <div class="box right">
+        <div class="r_image"><img src="{{url_for("static",filename="/images/person4.jpg")}}" height="200px" width="300px"></div>
+        <div class="content"><p>
+          One of the most helpful features is the abundance of customer reviews and ratings for each book. I can read what other readers think before deciding to make a purchase, which has led me to discover some fantastic reads.&nbsp;&nbsp;<b>-John</b>
+
+
+        </p></div>
+     </div>
+     <div class="box left">
+      <div class="r_image"><img src="{{url_for("static",filename="/images/person6.jpg")}}" height="200px" width="300px"></div>
+      <div class="content"><p>
+        I feel safe and secure shopping on this website, knowing that my personal information is protected during the checkout process. Plus, their easy return policy has given me peace of mind.&nbsp;&nbsp;<b>-Starc</b>
+      </p></div>
+     </div>
+     <div class="box bottom">
+      <div class="r_image"><img src="{{url_for("static",filename="/images/child.jpg")}}" height="200px" width="300px"></div>
+      <div class="content"><p>
+        All in all, this book retail website has become my go-to destination for buying books online. I highly recommend it to any book lover who wants a seamless, enjoyable, and affordable shopping experience. Happy reading!"&nbsp;&nbsp;<b>-Zoya</b>      </p></div>
+     </div>
+     <div class="box right">
+      <div class="r_image"><img src="{{url_for("static",filename="/images/person7.jpg")}}" height="200px" width="300px"></div>
+      <div class="content"><p>
+        What sets this website apart is their commitment to competitive pricing. I've found some of the best deals here, and they frequently offer discounts and promotions.&nbsp;&nbsp;<b>-Charlie</b>
+
+      </p></div>
+     </div>
+    </div>
+   </section>
+  <a href="https://www.google.com/maps/place/bookmybook.in/@13.1089818,80.2806598,17z/data=!3m1!4b1!4m6!3m5!1s0x3a526f69baf830eb:0xd93b64771746f454!8m2!3d13.1089766!4d80.2832347!16s%2Fg%2F11h6dy8bk1?entry=ttu" target="_blank" style="text-decoration: none;"><footer class="footer" id="contact">
+    <div class="map-cover"></div>
+    <div class=" row g-4">
+      <div class="col-md">
+          <h2 class="text-center mb-4" id="foot_tit">contact info</h2>
+          <ul class="list-group list-group-flush lead ml-3" id="foot_ul">
+              <li class="list-group-item">
+                  <span class="fw-bold">Main Location : </span>&nbsp50,mainst,
+                  annanagar,chennai
+              </li>
+              <li class="list-group-item">
+                  <span class="fw-bold">Email Id : </span>&nbsp BMB@gmail.com
+              </li>
+              <li class="list-group-item">
+                  <span class="fw-bold">Phone Number : </span>&nbsp 91-1234567890
+              </li>
+              
+          </ul>
+      </div>   
+    </div>
+   </footer></a>
+   <!--copyrights-->
+   <div class="copyrights">
+    <h3>Copyright@2023 &nbsp;BMB</h3>
+   </div>
+      </div> 
+        <!--js file for cart-->
+        <script src="{{url_for("static",filename="/js/script.js")}}"></script>
+        
+        <script src="{{url_for("static",filename="/js/scrollreveal.min.js")}}"></script>  
+       
+
+
+    </body>    
+</html>
